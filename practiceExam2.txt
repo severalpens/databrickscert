@@ -1,0 +1,132 @@
+Question 24
+A data engineer needs to dynamically create a table name string using three Python variables: region, store, and year. An example of a table name is below when region = "nyc", store = "100", and year = "2021":
+nyc100_sales_2021
+Which of the following commands should the data engineer use to construct the table name in Python?
+A. "{region}+{store}+_sales_+{year}"
+B. f"{region}+{store}+_sales_+{year}"
+C. "{region}{store}_sales_{year}"
+D. f"{region}{store}_sales_{year}"
+E. {region}+{store}+"_sales_"+{year}
+
+Question 25
+A data engineer has developed a code block to perform a streaming read on a data source. The code block is below:
+(spark
+.read
+.schema(schema)
+.format("cloudFiles")
+.option("cloudFiles.format", "json")
+.load(dataSource)
+)
+The code block is returning an error. Which of the following changes should be made to the code block to configure the block successfully perform a streaming read?
+A. The .read line should be replaced with .readStream.
+B. A new .stream line should be added after the .read line.
+C. The .format("cloudFiles") line should be replaced with .format("stream").
+D. A new .stream line should be added after the spark line.
+E. A new .stream line should be added after the .load(dataSource) line.
+
+Question 26
+A data engineer has configured a Structured Streaming job to read from a table, manipulate the data, and then perform a streaming write into a new table. The code block used by the data engineer is below:
+(spark.table("sales")
+.withColumn("avg_price", col("sales") / col("units"))
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("complete")
+._____
+.table("new_sales")
+)
+If the data engineer only wants the query to execute a single micro-batch to process all of the available data, which of the following lines of code should the data engineer use to fill the blank?
+A. trigger(once=True)
+B. trigger(continuous="once")
+C. processingTime("once")
+D. trigger(processingTime="once")
+E. processingTime(1)
+
+Question 27
+A data engineer is designing a data pipeline. The source system generates files in a shared directory that is also used by other processes. As a result, the files should be kept as is and will accumulate in the directory. The data engineer needs to identify which files are new since the previous run in the pipeline, and set up the pipeline to only ingest those new files with each run. Which of the following tools can the data engineer use to solve this problem?
+A. Databricks SQL
+B. Delta Lake
+C. Unity Catalog
+D. Data Explorer
+E. Auto Loader
+
+Question 28
+A data engineering team is in the process of converting their existing data pipeline to utilize Auto Loader for incremental processing in the ingestion of JSON files. One data engineer comes across the following code block in the Auto Loader documentation:
+(streaming_df = spark.readStream.format("cloudFiles")
+.option("cloudFiles.format", "json")
+.option("cloudFiles.schemaLocation", schemaLocation)
+.load(sourcePath))
+Assuming that schemaLocation and sourcePath have been set correctly, which of the following changes does the data engineer need to make to convert this code block to use Auto Loader to ingest the data?
+A. The data engineer needs to change the format("cloudFiles") line to format("autoLoader").
+B. There is no change required. Databricks automatically uses Auto Loader for streaming reads.
+C. There is no change required. The inclusion of format("cloudFiles") enables the use of Auto Loader.
+D. The data engineer needs to add the .autoLoader line before the .load(sourcePath) line.
+E. There is no change required. The data engineer needs to ask their administrator to turn on Auto Loader.
+
+Question 29
+Which of the following data workloads will utilize a Bronze table as its source?
+A. A job that aggregates cleaned data to create standard summary statistics.
+B. A job that queries aggregated data to publish key insights into a dashboard.
+C. A job that ingests raw data from a streaming source into the Lakehouse.
+D. A job that develops a feature set for a machine learning application.
+E. A job that enriches data by parsing its timestamps into a human-readable format.
+
+Question 30
+Which of the following data workloads will utilize a Silver table as its source?
+A. A job that enriches data by parsing its timestamps into a human-readable format.
+B. A job that queries aggregated data that already feeds into a dashboard.
+C. A job that ingests raw data from a streaming source into the Lakehouse.
+D. A job that aggregates cleaned data to create standard summary statistics.
+E. A job that cleans data by removing malformatted records.
+
+Question 31
+Which of the following Structured Streaming queries is performing a hop from a Bronze table to a Silver table?
+A. (spark.table("sales")
+.groupBy("store")
+.agg(sum("sales"))
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("complete")
+.table("aggregatedSales")
+)
+B. (spark.table("sales")
+.agg(sum("sales"), sum("units"))
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("complete")
+.table("aggregatedSales")
+)
+C. (spark.table("sales")
+.withColumn("avgPrice", col("sales") / col("units"))
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("append")
+.table("cleanedSales")
+)
+D. (spark.readStream.load(rawSalesLocation)
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("append")
+.table("uncleanedSales")
+)
+E. (spark.read.load(rawSalesLocation)
+.writeStream
+.option("checkpointLocation", checkpointPath)
+.outputMode("append")
+.table("uncleanedSales")
+)
+
+Question 32
+Which of the following benefits does Delta Live Tables provide for ELT pipelines over standard data pipelines that utilize Spark and Delta Lake on Databricks?
+A. The ability to declare and maintain data table dependencies.
+B. The ability to write pipelines in Python and/or SQL.
+C. The ability to access previous versions of data tables.
+D. The ability to automatically scale compute resources.
+E. The ability to perform batch and streaming queries.
+
+Question 33
+A data engineer has three notebooks in an ELT pipeline. The notebooks need to be executed in a specific order for the pipeline to complete successfully. The data engineer would like to use Delta Live Tables to manage this process. Which of the following steps must the data engineer take as part of implementing this pipeline using Delta Live Tables?
+A. They need to create a Delta Live Tables pipeline from the Data page.
+B. They need to create a Delta Live Tables pipeline from the Jobs page.
+C. They need to create a Delta Live tables pipeline from the Compute page.
+D. They need to refactor their notebook to use Python and the dlt library.
+E. They need to refactor their notebook to use SQL and CREATE LIVE TABLE keyword.

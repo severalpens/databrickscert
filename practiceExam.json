@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following describes a benefit of a data lakehouse that is unavailable in traditional data warehouse?",
+      "options": [
+        "A. A data lakehouse provides a relational system of data management.",
+        "B. A data lakehouse captures snapshots of data for version control purposes.",
+        "C. A data lakehouse couples storage and compute for complete control.",
+        "D. A data lakehouse utilizes proprietary storage formats for data.",
+        "E. A data lakehouse enables both batch and streaming analytics."
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which of the following locations hosts the driver and worker nodes of a Databricks-managed cluster?",
+      "options": [
+        "A. Data plane",
+        "B. Control plane",
+        "C. Databricks Filesystem",
+        "D. JDBC data source",
+        "E. Databricks web application"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A data architect is designing a data model that works for both video-based machine learning workloads and highly audited batch ETL/ELT workloads. Which of the following describes how using a data lakehouse can help the data architect meet the needs of both workloads?",
+      "options": [
+        "A. A data lakehouse requires very little data modeling.",
+        "B. A data lakehouse combines compute and storage for simple governance.",
+        "C. A data lakehouse provides autoscaling for compute clusters.",
+        "D. A data lakehouse stores unstructured data and is ACID-compliant.",
+        "E. A data lakehouse fully exists in the cloud."
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which of the following describes a scenario in which a data engineer will want to use a Job cluster instead of an all-purpose cluster?",
+      "options": [
+        "A. An ad-hoc analytics report needs to be developed while minimizing compute costs.",
+        "B. A data team needs to collaborate on the development of a machine learning model.",
+        "C. An automated workflow needs to be run every 30 minutes.",
+        "D. A Databricks SQL query needs to be scheduled for upward reporting.",
+        "E. A data engineer needs to manually investigate a production error."
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A data engineer has created a Delta table as part of a data pipeline. Downstream data analysts now need SELECT permission on the Delta table. Assuming the data engineer is the Delta table owner, which part of the Databricks Lakehouse Platform can the data engineer use to grant the data analysts the appropriate access?",
+      "options": [
+        "A. Repos",
+        "B. Jobs",
+        "C. Data Explorer",
+        "D. Databricks Filesystem",
+        "E. Dashboards"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Two junior data engineers are authoring separate parts of a single data pipeline notebook. They are working on separate Git branches so they can pair program on the same notebook simultaneously. A senior data engineer experienced in Databricks suggests there is a better alternative for this type of collaboration. Which of the following supports the senior data engineer’s claim?",
+      "options": [
+        "A. Databricks Notebooks support automatic change-tracking and versioning.",
+        "B. Databricks Notebooks support real-time coauthoring on a single notebook.",
+        "C. Databricks Notebooks support commenting and notification comments.",
+        "D. Databricks Notebooks support the use of multiple languages in the same notebook.",
+        "E. Databricks Notebooks support the creation of interactive data visualizations."
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following describes how Databricks Repos can help facilitate CI/CD workflows on the Databricks Lakehouse Platform?",
+      "options": [
+        "A. Databricks Repos can facilitate the pull request, review, and approval process before merging branches.",
+        "B. Databricks Repos can merge changes from a secondary Git branch into a main Git branch.",
+        "C. Databricks Repos can be used to design, develop, and trigger Git automation pipelines.",
+        "D. Databricks Repos can store the single-source-of-truth Git repository.",
+        "E. Databricks Repos can commit or push code changes to trigger a CI/CD process."
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which of the following statements describes Delta Lake?",
+      "options": [
+        "A. Delta Lake is an open source analytics engine used for big data workloads.",
+        "B. Delta Lake is an open format storage layer that delivers reliability, security, and performance.",
+        "C. Delta Lake is an open source platform to help manage the complete machine learning lifecycle.",
+        "D. Delta Lake is an open source data storage format for distributed data.",
+        "E. Delta Lake is an open format storage layer that processes data."
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A data architect has determined that a table of the following format is necessary: id STRING, birthDate DATE, avgRating FLOAT. Which of the following code blocks uses SQL DDL commands to create an empty Delta table in the above format regardless of whether a table already exists with this name?",
+      "options": [
+        "A. CREATE OR REPLACE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT USING DELTA",
+        "B. CREATE OR REPLACE TABLE table_name ( id STRING, birthDate DATE, avgRating FLOAT )",
+        "C. CREATE TABLE IF NOT EXISTS table_name ( id STRING, birthDate DATE, avgRating FLOAT )",
+        "D. CREATE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT",
+        "E. CREATE OR REPLACE TABLE table_name WITH COLUMNS ( id STRING, birthDate DATE, avgRating FLOAT ) USING DELTA"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following SQL keywords can be used to append new rows to an existing Delta table?",
+      "options": [
+        "A. UPDATE",
+        "B. COPY",
+        "C. INSERT INTO",
+        "D. DELETE",
+        "E. UNION"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A data engineering team needs to query a Delta table to extract rows that all meet the same condition. However, the team has noticed that the query is running slowly. The team has already tuned the size of the data files. Upon investigating, the team has concluded that the rows meeting the condition are sparsely located throughout each of the data files. Based on the scenario, which of the following optimization techniques could speed up the query?",
+      "options": [
+        "A. Data skipping",
+        "B. Z-Ordering",
+        "C. Bin-packing",
+        "D. Write as a Parquet file",
+        "E. Tuning the file size"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A data engineer needs to create a database called customer360 at the location /customer/customer360. The data engineer is unsure if one of their colleagues has already created the database. Which of the following commands should the data engineer run to complete this task?",
+      "options": [
+        "A. CREATE DATABASE customer360 LOCATION '/customer/customer360';",
+        "B. CREATE DATABASE IF NOT EXISTS customer360;",
+        "C. CREATE DATABASE IF NOT EXISTS customer360 LOCATION '/customer/customer360';",
+        "D. CREATE DATABASE IF NOT EXISTS customer360 DELTA LOCATION '/customer/customer360';",
+        "E. CREATE DATABASE customer360 DELTA LOCATION '/customer/customer360';"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A junior data engineer needs to create a Spark SQL table my_table for which Spark manages both the data and the metadata. The metadata and data should also be stored in the Databricks Filesystem (DBFS). Which of the following commands should a senior data engineer share with the junior data engineer to complete this task?",
+      "options": [
+        "A. CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH 'storage-path');",
+        "B. CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH 'storage-path');",
+        "C. CREATE MANAGED TABLE my_table (id STRING, value STRING);",
+        "D. CREATE TABLE my_table (id STRING, value STRING) USING DBFS;",
+        "E. CREATE TABLE my_table (id STRING, value STRING);"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "A data engineer wants to create a relational object by pulling data from two tables. The relational object must be used by other data engineers in other sessions. In order to save on storage costs, the data engineer wants to avoid copying and storing physical data. Which of the following relational objects should the data engineer create?",
+      "options": [
+        "A. View",
+        "B. Temporary view",
+        "C. Delta Table",
+        "D. Database",
+        "E. Spark SQL Table"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A data engineering team has created a series of tables using Parquet data stored in an external system. The team is noticing that after appending new rows to the data in the external system, their queries within Databricks are not returning the new rows. They identify the caching of the previous data as the cause of this issue. Which of the following approaches will ensure that the data returned by queries is always up-to-date?",
+      "options": [
+        "A. The tables should be converted to the Delta format.",
+        "B. The tables should be stored in a cloud-based external system.",
+        "C. The tables should be refreshed in the writing cluster before the next query is run.",
+        "D. The tables should be altered to include metadata to not cache.",
+        "E. The tables should be updated before the next query is run."
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A table customerLocations exists with the following schema: id STRING, date STRING, city STRING, country STRING. A senior data engineer wants to create a new table from this table using the following command: CREATE TABLE customersPerCountry AS SELECT country, COUNT(*) AS customers FROM customerLocations GROUP BY country; A junior data engineer asks why the schema is not being declared for the new table. Which of the following responses explains why declaring the schema is not necessary?",
+      "options": [
+        "A. CREATE TABLE AS SELECT statements adopt schema details from the source table and query.",
+        "B. CREATE TABLE AS SELECT statements infer the schema by scanning the data.",
+        "C. CREATE TABLE AS SELECT statements result in tables where schemas are optional.",
+        "D. CREATE TABLE AS SELECT statements assign all columns the type STRING.",
+        "E. CREATE TABLE AS SELECT statements result in tables that do not support schemas."
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A data engineer is overwriting data in a table by deleting the table and recreating the table. Another data engineer suggests that this is inefficient and the table should simply be overwritten instead. Which of the following reasons to overwrite the table instead of deleting and recreating the table is incorrect?",
+      "options": [
+        "A. Overwriting a table is efficient because no files need to be deleted.",
+        "B. Overwriting a table results in a clean table history for logging and audit purposes.",
+        "C. Overwriting a table maintains the old version of the table for Time Travel.",
+        "D. Overwriting a table is an atomic operation and will not leave the table in an unfinished state.",
+        "E. Overwriting a table allows for concurrent queries to be completed while in progress."
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of the following commands will return records from an existing Delta table my_table where duplicates have been removed?",
+      "options": [
+        "A. DROP DUPLICATES FROM my_table;",
+        "B. SELECT * FROM my_table WHERE duplicate = False;",
+        "C. SELECT DISTINCT * FROM my_table;",
+        "D. MERGE INTO my_table a USING new_records b ON a.id = b.id WHEN NOT MATCHED THEN INSERT *;",
+        "E. MERGE INTO my_table a USING new_records b;"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A data engineer wants to horizontally combine two tables as a part of a query. They want to use a shared column as a key column, and they only want the query result to contain rows whose value in the key column is present in both tables. Which of the following SQL commands can they use to accomplish this task?",
+      "options": [
+        "A. INNER JOIN",
+        "B. OUTER JOIN",
+        "C. LEFT JOIN",
+        "D. MERGE",
+        "E. UNION"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A junior data engineer has ingested a JSON file into a table raw_table with the following schema: cart_id STRING, items ARRAY. The junior data engineer would like to unnest the items column in raw_table to result in a new table with the following schema: cart_id STRING, item_id STRING. Which of the following commands should the junior data engineer run to complete this task?",
+      "options": [
+        "A. SELECT cart_id, filter(items) AS item_id FROM raw_table;",
+        "B. SELECT cart_id, flatten(items) AS item_id FROM raw_table;",
+        "C. SELECT cart_id, reduce(items) AS item_id FROM raw_table;",
+        "D. SELECT cart_id, explode(items) AS item_id FROM raw_table;",
+        "E. SELECT cart_id, slice(items) AS item_id FROM raw_table;"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "A data engineer has ingested a JSON file into a table raw_table with the following schema: transaction_id STRING, payload ARRAY. The data engineer wants to efficiently extract the date of each transaction into a table with the following schema: transaction_id STRING, date TIMESTAMP. Which of the following commands should the data engineer run to complete this task?",
+      "options": [
+        "A. SELECT transaction_id, explode(payload) FROM raw_table;",
+        "B. SELECT transaction_id, payload.date FROM raw_table;",
+        "C. SELECT transaction_id, date FROM raw_table;",
+        "D. SELECT transaction_id, payload[date] FROM raw_table;",
+        "E. SELECT transaction_id, date from payload FROM raw_table;"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A data analyst has provided a data engineering team with the following Spark SQL query: SELECT district, avg(sales) FROM store_sales_20220101 GROUP BY district; The data analyst would like the data engineering team to run this query every day. The date at the end of the table name (20220101) should automatically be replaced with the current date each time the query is run. Which of the following approaches could be used by the data engineering team to efficiently automate this process?",
+      "options": [
+        "A. They could wrap the query using PySpark and use Python’s string variable system to automatically update the table name.",
+        "B. They could manually replace the date within the table name with the current day’s date.",
+        "C. They could request that the data analyst rewrites the query to be run less frequently.",
+        "D. They could replace the string-formatted date in the table with a timestamp-formatted date.",
+        "E. They could pass the table into PySpark and develop a robustly tested module on the existing query."
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A data engineer has ingested data from an external source into a PySpark DataFrame raw_df. They need to briefly make this data available in SQL for a data analyst to perform quality assurance check on the data. Which of the following commands should the data engineer run to make this data available in SQL for only the remainder of the Spark session?",
+      "options": [
+        "A. raw_df.createOrReplaceTempView('raw_df')",
+        "B. raw_df.createTable('raw_df')",
+        "C. raw_df.write.save('raw_df')",
+        "D. raw_df.saveAsTable('raw_df')",
+        "E. There is no way to share data between PySpark and SQL."
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A data engineer needs to dynamically create a table name string using three Python variables: region, store, and year. An example of a table name is below when region = 'nyc', store = '100', and year = '2021': nyc100_sales_2021. Which of the following commands should the data engineer use to construct the table name in Python?",
+      "options": [
+        "A. '{region}+{store}+_sales_+{year}'",
+        "B. f'{region}+{store}+_sales_+{year}'",
+        "C. '{region}{store}_sales_{year}'",
+        "D. f'{region}{store}_sales_{year}'",
+        "E. {region}+{store}+'_sales_'+{year}"
+      ],
+      "answer": "D"
+    }
+  ]
+}
