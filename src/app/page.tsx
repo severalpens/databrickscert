@@ -10,6 +10,7 @@ interface Question {
 export default function Home() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [showAnswers, setShowAnswers] = useState(false);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     fetch("/practiceExam.json")
@@ -21,16 +22,42 @@ export default function Home() {
     setShowAnswers(!showAnswers);
   };
 
+  const calculateScore = () => {
+    let newScore = 0;
+    questions.forEach((question, index) => {
+      const selectedOption = document.querySelector(
+        `input[name="question-${index}"]:checked`
+      ) as HTMLInputElement;
+      if (selectedOption && selectedOption.value.charAt(0) === question.answer.charAt(0)) {
+        newScore += 1;
+      }
+    });
+    setScore(newScore);
+  };
+
+  useEffect(() => {
+    if (showAnswers) {
+      calculateScore();
+    }
+  }, [showAnswers]);
+
   return (
     <div className="container mx-auto p-4 h-screen flex flex-col">
-      <div className="fixed top-0 left-0 right-0 bg-white shadow-md flex ">
-        <h1 className="text-2xl font-bold mb-4">Practice Exam</h1>
-        <button
-          onClick={toggleAnswers}
-          className="mb-4 px-2 py-1 bg-blue-500 text-white rounded mx-1 my-1"
-        >
-          {showAnswers ? "Hide Answers" : "Show Answers"}
-        </button>
+      <div id="headerdiv" className="fixed top-0 left-0 right-0 bg-white shadow-md flex justify-between items-center p-4">
+        <h1 className="text-2xl font-bold">Practice Exam</h1>
+        <div className="flex items-center">
+          <button
+            onClick={toggleAnswers}
+            className="px-2 py-1 bg-blue-500 text-white rounded mx-1"
+          >
+            {showAnswers ? "Hide Answers" : "Show Answers"}
+          </button>
+          {showAnswers && (
+            <div className="ml-4 text-lg font-medium">
+              Score: {score}/{questions.length}
+            </div>
+          )}
+        </div>
       </div>
       <div className="mt-24 overflow-y-auto">
         {questions.map((question, index) => (
@@ -42,7 +69,9 @@ export default function Home() {
               {question.options.map((option, optionIndex) => (
                 <li key={optionIndex} className="mb-1 flex items-center">
                   <input
-                    type="checkbox"
+                    type="radio"
+                    name={`question-${index}`}
+                    value={option}
                     id={`question-${index}-option-${optionIndex}`}
                     className="mr-2"
                   />
