@@ -5,11 +5,14 @@ interface Question {
   question: string;
   options: string[];
   answer: string;
+  showAnswer?: boolean;
 }
 
 export default function Home() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [showAnswers, setShowAnswers] = useState(false);
+  const [showAnswerForIndexNumber, setShowAnswerForIndexNumber] = useState<number>(0);
+  // Score state to keep track of the user's score
   const [score, setScore] = useState(0);
 
   useEffect(() => {
@@ -21,6 +24,10 @@ export default function Home() {
   const toggleAnswers = () => {
     setShowAnswers(!showAnswers);
   };
+
+  const handleOptionClick = (index: number) => {
+    setShowAnswerForIndexNumber(index);
+  }
 
   const calculateScore = () => {
     let newScore = 0;
@@ -74,6 +81,7 @@ export default function Home() {
                     value={option}
                     id={`question-${index}-option-${optionIndex}`}
                     className="mr-2"
+                    onClick={() => { handleOptionClick(index) }}
                   />
                   <label htmlFor={`question-${index}-option-${optionIndex}`}>
                     {option}
@@ -81,7 +89,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            {showAnswers && (
+            {index === showAnswerForIndexNumber && (
               <div className="font-medium">
                 <p>Answer: {question.answer}</p>
               </div>
