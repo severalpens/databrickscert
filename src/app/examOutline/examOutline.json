@@ -21,47 +21,47 @@
       },
       {
         "topic": "Differentiate between all-purpose clusters and jobs clusters",
-        "answer": ""
+        "answer": "All-purpose clusters are designed for interactive data exploration and development, allowing users to run notebooks and perform ad-hoc queries. Jobs clusters are optimized for running scheduled jobs and batch processing tasks, providing a more efficient and cost-effective solution for automated workloads."
       },
       {
         "topic": "Identify how cluster software is versioned using the Databricks Runtime",
-        "answer": ""
+        "answer": "Databricks cluster software is versioned by the Databricks Runtime by assigning a specific version number to each release. This versioning allows users to select the appropriate runtime version for their clusters, ensuring compatibility with their workloads and access to the latest features and improvements."
       },
       {
         "topic": "Identify how clusters can be filtered to view those that are accessible by the user",
-        "answer": ""
+        "answer": "Clusters can be filtered by user access permissions, allowing users to view only those clusters they have permission to access. This can be done through the Databricks UI or API, where users can apply filters based on cluster status, owner, or other attributes."
       },
       {
         "topic": "Describe how clusters are terminated and the impact of terminating a cluster",
-        "answer": ""
+        "answer": "Clusters are terminated by stopping the cluster through the Databricks UI or API. Terminating a cluster releases the compute resources and storage associated with it, which can impact any running jobs or notebooks that were using the cluster. It is important to ensure that all work is saved before terminating a cluster to avoid data loss."
       },
       {
         "topic": "Identify a scenario in which restarting the cluster will be useful",
-        "answer": ""
+        "answer": "A scenario in which restarting the cluster will be useful is when there are performance issues or memory leaks in the cluster. Restarting the cluster can help clear any cached data, free up resources, and reset the environment to a clean state, improving overall performance."
       },
       {
         "topic": "Describe how to use multiple languages within the same notebook",
-        "answer": ""
+        "answer": "Multiple languages can be used within the same notebook by using language magic commands. For example, in a Databricks notebook, you can use `%python`, `%sql`, `%scala`, or `%r` at the beginning of a cell to specify the language for that cell. This allows users to mix and match languages as needed for their data processing tasks."
       },
       {
         "topic": "Identify how to run one notebook from within another notebook",
-        "answer": ""
+        "answer": "One notebook can be run from within another notebook using the `%run` magic command. This command allows users to include the content of another notebook, enabling code reuse and modularization of workflows. For example, `%run ./path/to/another_notebook` will execute the specified notebook and make its variables and functions available in the current notebook."
       },
       {
         "topic": "Identify how notebooks can be shared with others",
-        "answer": ""
+        "answer": "Notebooks can be shared with others by using the sharing options available in the Databricks UI. Users can share notebooks by providing access permissions to specific users or groups, exporting notebooks as HTML or IPython files, or publishing notebooks to a shared workspace. Additionally, notebooks can be versioned and managed through Databricks Repos for collaborative development."
       },
       {
         "topic": "Describe how Databricks Repos enables CI/CD workflows in Databricks",
-        "answer": ""
+        "answer": "Databricks Repos enables CI/CD workflows by integrating with Git repositories, allowing users to version control their notebooks and code. This integration supports branching, merging, and pull requests, enabling collaborative development and automated deployment of code changes. Users can also set up automated tests and deployments to ensure code quality and consistency across environments."
       },
       {
         "topic": "Identify Git operations available via Databricks Repos",
-        "answer": ""
+        "answer": "Git operations available via Databricks Repos include cloning repositories, committing changes, pushing and pulling updates, creating branches, merging branches, and resolving conflicts. These operations allow users to manage their code versions and collaborate effectively within the Databricks environment."
       },
       {
-        "topic": "Identify limitations in Databricks Notebooks version control functionality relative to Repos.        ",
-        "answer": ""
+        "topic": "Identify limitations in Databricks Notebooks version control functionality relative to Repos.",
+        "answer": "Databricks Notebooks version control functionality is limited compared to Repos in that it does not support advanced Git features such as branching, merging, and pull requests. Notebooks version control primarily tracks changes to the notebook content itself, while Repos provides a full Git experience with all the associated capabilities for collaborative development and version management."
       }
     ]
   },
@@ -71,11 +71,11 @@
     "topics": [
       {
         "topic": "Extract data from a single file and from a directory of files",
-        "answer": ""
+        "answer": "Here is an example of how to extract data from a single file and from a directory of files using PySpark:\n\n```python\n# Extracting data from a single file\nsingle_file_df = spark.read.format('csv').option('header', 'true').load('/path/to/single_file.csv')\n\n# Extracting data from a directory of files\ndirectory_df = spark.read.format('csv').option('header', 'true').load('/path/to/directory/*')\n```\nThis code reads CSV files, but you can change the format to JSON, Parquet, etc., as needed."
       },
       {
         "topic": "Identify the prefix included after the FROM keyword as the data type.",
-        "answer": ""
+        "answer": "The prefix included after the FROM keyword in a SQL query indicates the data source type, such as 'table', 'view', 'file', or 'directory'. For example, `FROM table_name` indicates a table, while `FROM '/path/to/file.csv'` indicates a file."
       },
       {
         "topic": "Create a view, a temporary view, and a CTE as a reference to a file",
