@@ -1,4 +1,4 @@
-import sections from "./examOutline";
+import sections from "../examOutline";
 import ExamOutlineClient from "./ExamOutlineClient";
 
 export default function ExamOutline() {

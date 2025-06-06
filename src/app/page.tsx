@@ -16,6 +16,11 @@ export default function Home() {
             Practice Exam
           </Link>
         </div>
+        <div>
+          <Link href="/examOutlineDetail" className="mb-4">
+            Exam Outline Detail
+          </Link>
+        </div>
       </div>
     </div>
   );
