@@ -17,7 +17,7 @@ export default function Home() {
           </Link>
         </div>
         <div>
-          <Link href="/examOutlineDetail" className="mb-4">
+          <Link href="/examOutlineDetail/0" className="mb-4">
             Exam Outline Detail
           </Link>
         </div>

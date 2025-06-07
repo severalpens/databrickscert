@@ -62,7 +62,7 @@ export default async function ExamOutlineDetailPage(callbackFunction) {
             <span />
           )}
         </div>
-        <ExamOutlineDetailClient topic={topic} />
+        <ExamOutlineDetailClient topic={topic} prevId={prevTopic ? prevTopic.id : null} nextId={nextTopic ? nextTopic.id : null} />
       </div>
     </div>
   );

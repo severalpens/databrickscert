@@ -3,7 +3,7 @@
     "id": 0,
     "section": "Databricks Lakehouse Platform",
     "topic": "Describe the relationship between the data lakehouse and the data warehouse.",
-    "answer": "A data warehouse is a data repository that can be used by data analyst or data scientist. A data lake is a generic location where structured and unstructured data can be stored. A data lakehouse is a combination of the two, where structured data is stored in a data warehouse and unstructured data is stored in a data lake. The data lakehouse allows for the flexibility of a data lake while providing the structure and performance of a data warehouse."
+    "answer": "A data warehouse is a data repository that can be used by data analyst or data scientist.\n\n A data lake is a generic location where structured and unstructured data can be stored. \n\nA data lakehouse is a combination of the two. \n\nThe data lakehouse allows for the flexibility of a data lake while providing the structure and performance of a data warehouse."
   },
   {
     "id": 1,
@@ -33,13 +33,13 @@
     "id": 5,
     "section": "Databricks Lakehouse Platform",
     "topic": "Identify how cluster software is versioned using the Databricks Runtime",
-    "answer": "Databricks cluster software is versioned by the Databricks Runtime by assigning a specific version number to each release. This versioning allows users to select the appropriate runtime version for their clusters, ensuring compatibility with their workloads and access to the latest features and improvements."
+    "answer": "Databricks cluster software is versioned by the Databricks Runtime by assigning a specific version number to each release.\n\n This versioning allows users to select the appropriate runtime version for their clusters, ensuring compatibility with their workloads and access to the latest features and improvements."
   },
   {
     "id": 6,
     "section": "Databricks Lakehouse Platform",
     "topic": "Identify how clusters can be filtered to view those that are accessible by the user",
-    "answer": "Clusters can be filtered by user access permissions, allowing users to view only those clusters they have permission to access. This can be done through the Databricks UI or API, where users can apply filters based on cluster status, owner, or other attributes."
+    "answer": "Clusters can be filtered by user access permissions, allowing users to view only those clusters they have permission to access. \n\nThis can be done through the Databricks UI or API, where users can apply filters based on cluster status, owner, or other attributes."
   },
   {
     "id": 7,
@@ -99,7 +99,7 @@
     "id": 16,
     "section": "ELT with Apache Spark",
     "topic": "Identify the prefix included after the FROM keyword as the data type.",
-    "answer": "The prefix included after the FROM keyword in a SQL query indicates the data source type, such as 'table', 'view', 'file', or 'directory'. For example, `FROM table_name` indicates a table, while `FROM '/path/to/file.csv'` indicates a file."
+    "answer": "The prefix included after the FROM keyword in a SQL query indicates the data source type, such as 'table', 'view', 'file', or 'directory'.\n\n For example, `FROM table_name` indicates a table, while `FROM '/path/to/file.csv'` indicates a file."
   },
   {
     "id": 17,
@@ -111,7 +111,7 @@
     "id": 18,
     "section": "ELT with Apache Spark",
     "topic": "Identify that tables from external sources are not Delta Lake tables.",
-    "answer": "You can identify tables from external sources by checking their format and metadata. If a table is not stored in Delta Lake format, it will not have the Delta Lake transaction log and will not support ACID transactions, schema enforcement, or time travel features."
+    "answer": "You can identify tables from external sources by checking their format and metadata.\n\n If a table is not stored in Delta Lake format, it will not have the Delta Lake transaction log and will not support ACID transactions, schema enforcement, or time travel features."
   },
   {
     "id": 19,

@@ -7,6 +7,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-6">
           <Link href="/" className="text-xl font-bold hover:text-blue-600 transition-colors">Practice Exam</Link>
           <Link href="/examOutline" className="text-lg font-medium hover:text-blue-600 transition-colors">Exam Outline</Link>
+          <Link href="/examOutlineDetail/0" className="text-lg font-medium hover:text-blue-600 transition-colors">Exam Outline Detail</Link>
           <Link href="https://github.com/severalpens/databrickscert" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:text-blue-600 transition-colors">GitHub Repo</Link>
         <Link href="/practiceExam" className="text-lg font-medium hover:text-blue-600 transition-colors">Practice Exam</Link>
         </div>
